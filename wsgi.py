@@ -17,9 +17,6 @@ sys.stdout = sys.stderr
 
 cherrypy.config.update({'environment': 'embedded'})
 
-class Root(object):
-    def index(self):
-        return 'Hello World!'
-    index.exposed = True
+from webengine.application import Root
 
 application = cherrypy.Application(Root(), script_name=None, config=None)
