@@ -1,7 +1,8 @@
-import inspect
+import os
 from lxml import etree
-from os.path import dirname, join
+from os.path import dirname, join, exists
 from glob import glob
+from tempita import HTMLTemplate
 
 def dict_from_element(element):
     element_dict = {}
@@ -17,7 +18,7 @@ def dict_from_element(element):
     return element_dict
 
 def load_products_data():
-    current_path = dirname(inspect.stack()[1][1])
+    current_path = os.path.dirname(os.path.abspath(__file__))
     data_path = join(current_path, '..', 'data')
     products = glob(join(data_path, 'products', '*.xml'))
     print "Processing %d product file(s)" % len(products)
@@ -30,8 +31,16 @@ def load_products_data():
 
 
 def rebuild_static_files():
-    """ Rebuilds static htmtl files from the dynamics datas """
-    print load_products_data()
+    """ Rebuilds static htmtl files from the dynamics data """
+    current_path = os.path.dirname(os.path.abspath(__file__))
+    public_html_path = join(current_path, '..', 'public_html')
+    if not exists(public_html_path):
+        os.mkdir(public_html_path)
+    template = HTMLTemplate.from_filename('../templates/index.html')
+    products_data = load_products_data()
+    with open(join(public_html_path, 'index.html'), 'w') as index_html_file:
+        print template.substitute(locals())
+        index_html_file.write(template.substitute(locals()) ) 
 
 
 if __name__ == "__main__":

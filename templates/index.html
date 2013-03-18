@@ -1,6 +1,6 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 <div id="container">
@@ -10,14 +10,17 @@
 		</h1>
 	</div>
 	<div id="navigation">
-		<ul id="nagivation_iterator">
-			<li><a href="link">Title</a></li>
+		<ul>
+		<li><a href="link">Title</a></li>
 		</ul>
-	</div>
+	</div>	
 	<div id="content">
-		<div id="product_iteractor">
-			$display_name$ $version$
-		</div>			
+		{{for a in products_data}}
+			{{a['display_name'] | html}} {{a['version'][0]['name'] | html}}
+			{{for b in a['version'][0]['download']}}
+				<A HREF="{{b['link']}}">{{b['name']}}</A>
+			{{endfor}}
+		{{endfor}}	
 	</div>
 	<div id="footer">
 		Copyright © Site name, 20XX

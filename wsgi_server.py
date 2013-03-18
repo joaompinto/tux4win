@@ -1,6 +1,6 @@
 #!/usr/bin/pyhon
 # -*- coding: utf-8 -*- 
-
+import cherrypy
 from cherrypy import wsgiserver
 import wsgi
 

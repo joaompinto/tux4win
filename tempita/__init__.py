@@ -138,7 +138,7 @@ class Template(object):
 
     def from_filename(cls, filename, namespace=None, encoding=None,
                       default_inherit=None, get_template=get_file_template):
-        f = open(filename, 'rb')
+        f = open(filename, 'r')
         c = f.read()
         f.close()
         if encoding:
