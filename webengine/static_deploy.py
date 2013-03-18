@@ -1,7 +1,14 @@
 import os
+import sys
 from lxml import etree
 from os.path import dirname, join, exists
 from glob import glob
+
+current_path = os.path.dirname(os.path.abspath(__file__))
+path = join(current_path, '..')
+if path not in sys.path:
+    sys.path.append(path)
+
 from tempita import HTMLTemplate
 
 def dict_from_element(element):
