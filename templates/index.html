@@ -1,6 +1,6 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
 <div id="container">
@@ -16,7 +16,7 @@
 	</div>	
 	<div id="content">
 		{{for a in products_data}}
-			{{a['display_name'] | html}} {{a['version'][0]['name'] | html}}
+			{{a['display_name'] | html}} {{a['version'][0]['name'] | html}}<br>
 			{{for b in a['version'][0]['download']}}
 				<A HREF="{{b['link']}}">{{b['name']}}</A>
 			{{endfor}}

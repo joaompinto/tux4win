@@ -12,3 +12,24 @@ class Root(object):
         return serve_file(join(self.public_html_path, 'index.html'), 'r')
     
     index.exposed = True
+
+def _enable_base_staticapp(app):
+    current_path = os.path.dirname(os.path.abspath(__file__))    
+    base_static = ('js', 'css')
+    conf = {}
+    for dir in base_static:
+        conf['/'+dir] = {\
+                'tools.staticdir.on': True
+                ,'tools.staticdir.dir': os.path.join(current_path
+                , '..', 'templates', dir)
+                }
+    conf['/media'] =  {\
+                'tools.staticdir.on': True
+                ,'tools.staticdir.dir': os.path.join(current_path
+                , 'media')
+                }
+    app.merge(conf)
+        
+application = cherrypy.Application(Root(), script_name=None, config=None)
+_enable_base_staticapp(application)
+
