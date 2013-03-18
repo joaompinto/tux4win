@@ -1,0 +1,21 @@
+<product>
+	<short_name>bitfigther</short_name>
+	<display_name>Bitfigther</display_name>
+	<category>Action</category>
+	<short_desc>Multiplayer vector graphics space game</short_desc>
+	<long_desc>
+	Bitfighter is a free multi-player 2-D space combat game with Robotron-like controls. 
+	It's a team-based strategy game featuring retro vector graphics and customizable ships. 
+	It's fast, fun, and frenetic.
+	</long_desc>
+	<homepage>http://http://bitfighter.org/</homepage>
+		<version>
+		<name>0.0.018a</name>
+		<publish_time>2013-03-09 15:32:44</publish_time>
+		<changes/>
+			<download>
+				<name>Installer</name>
+				<link>https://bitfighter.googlecode.com/files/Bitfighter-Installer-018a.exe</link>
+			</download>
+	</version>
+</product>
