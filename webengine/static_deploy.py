@@ -1,6 +1,6 @@
 import os
 import sys
-import Image
+from PIL import Image
 from lxml import etree
 from os.path import dirname, join, exists, basename
 from glob import glob
@@ -37,7 +37,6 @@ def load_products_data():
         tree = etree.parse(product_xml)
         product_dict = dict_from_element(tree.getroot())
         products_list.append(product_dict)
-    print products_list
     return products_list
 
 def create_thumb(source_filename, target_filename):
