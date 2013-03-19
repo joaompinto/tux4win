@@ -5,22 +5,24 @@
 
 #header
 { 
-	background: #80C8FE;
+	width:767px;
 	padding: 5px;
-	width: 100%;
-	position:fixed;
-	top:0px;		
+	margin: auto;	
+	background: #80C8FE;
+
 }
 
-#header h1 { margin: 0; }
+#header h1 {
+    margin: 0px;
+    text-align: center;
+}
 
 #navigation
 {
-	margin: 49px auto;
-	float: left;
-	width: 100%;
-	position:fixed;
-	top:0px;	
+	width:767px;
+	height: 30px;
+	padding: 5px;
+	margin: auto;		
 	background: #00477D;
 }
 
@@ -51,21 +53,178 @@
 #content
 {
 	clear: left;
-	padding: 20px;
-	margin: 90px auto;
+	padding: 10px;
 }
 
 #content h2
 {
 	color: #000;
-	font-size: 160%;
-	margin: 0 0 .5em;
+	font-size: 120%;
+	margin: 0 0 .1em;
+	padding-left: 10px;
 }
 
 #footer
 {
 	background: #BFE3FE;
 	text-align: right;
+	width:767px;
 	padding: 20px;
+	margin: auto;	
 	height: 1%;
+}
+
+.product {
+	width:767px;
+	height:240px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+}
+
+.product .the_stars { 
+	padding-top:4px;
+	padding-left:7px;
+}
+.product a.h2 {
+	font-size:20px;
+	color: #990000;
+	padding:12px;
+	width:720px;
+}
+.product .thumb_link {
+	display: block;
+	float:left;
+	height:209px;
+	margin:1px 9px 1px 9px;
+	width:265px;
+	text-align: center;
+}
+.product .thumb {
+	margin:0 auto;
+	border:2px solid #222;
+}
+.product a.install_now {
+	clear:left;
+	float:left;
+	margin:3px 6px;
+	background:url('img/install_now.png') no-repeat 0 0;
+	width:272px;
+	height:49px;
+	display:block;
+	font-size:13pt;
+	color:#C0C0C0 !important;
+	line-height:48px;
+	text-shadow:2px 2px #000000;
+	padding-left:25px;
+	word-spacing:-2px;
+	font-family:Arial,Sans Serif,Verdana,Tahoma;
+}
+.product a.install_now:hover {
+	background-position:0 -49px;
+	text-decoration:none !important;
+}
+
+/* Game Container Content */
+.product .details a.featured_icon {
+	position:absolute;
+	top:68px;
+	right:8px;
+	height:22px;
+	width:200px;
+	padding:3px 24px 0 0;
+	color:#0 !important;
+	text-align:right;
+	font-size:11px;
+}
+.product .details p {
+	color:#0;
+	font-size:14px;
+	font-weight:normal;
+	padding:4px 6px;
+}
+.product .details h3 {
+	font-size:14px;
+	padding:5px;
+	color:#202020;
+}
+
+/* Game Container Footer */
+.product .details h3.more_links a { color:#336699 !important; }
+.product .details h3.more_links a:hover { text-decoration: underline !important; } */
+.product .details h3.available_for a { color:#bbb !important; }
+.product .details h3.available_for a:hover { color:#eee !important; } 
+
+.product .details a.video, .product .details a.homepage, .product .details a.comments { padding-left:20px; }
+.product .details a.video { background:url('img/xicon_video.png') no-repeat 0 0; }
+.product .details a.homepage { background:url('img/xicon_homepage.png') no-repeat 0 0; }
+.product .details a.comments { background:url('img/xicon_comments.png') no-repeat 0 0; }
+
+.product .details .updated {
+	position:absolute;
+	bottom:-10px;
+	left:280px;
+	font-weight:normal;
+}
+.product .details .more_links, .product .details .descript { color:#666; }
+.product .details .more_links {
+	position:absolute;
+	bottom:25px;
+	left:280px;
+	width:468px;
+	border-bottom:2px solid #777;
+	padding:0 0 5px 0;
+	margin:0 0 5px 5px;
+}
+.product .details .available_for {
+	position:absolute;
+	bottom:50px;
+	left:280px;
+	width:568px;
+	padding:0 0 5px 0;
+	margin:0 0 5px 5px;
+}
+.product .details .tags_container {
+	position:absolute;
+	bottom:5px;
+	right:12px;
+}
+.product .details .tags {
+	background:url('img/xicon_tags.png') no-repeat 0 1px;
+	padding-left:16px;
+}
+.product .details .add_tag_box {
+	position:absolute;
+	bottom:33px;
+	right:4px;
+	height:18px;
+	width:100px;
+	padding-right:28px;
+	border:2px solid #999;
+	background-color:#333;
+	color:#bbb;
+}
+.product .details .add_tag_submit {
+	position:absolute;
+	bottom:35px;
+	right:12px;
+	height:18px;
+	width:26px;
+	font-size:10px;
+	font-weight:bold;
+	padding:0;
+	background-color:#333;
+	border:none;
+	border-left:2px solid #666;
+	color:#ccc;	
+}
+
+.product .details .download_links {
+    position: absolute;
+    bottom: 10px;
+    left: 280px;
+    width: 468px;
+    border-bottom: 2px solid rgb(119, 119, 119);
+    padding: 0px 0px 5px;
+    margin: 0px 0px 5px 5px;
 }

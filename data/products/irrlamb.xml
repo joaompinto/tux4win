@@ -1,0 +1,19 @@
+<product>
+    <short_name>irrlamb</short_name>
+	<display_name>irrlamb</display_name>
+	<category>Puzzle</category>
+	<short_desc>3D Physics Game</short_desc>
+	<long_desc>
+     irrlamb is a 3D game that probably involves a lot of physics and frustrating gameplay.
+	</long_desc>
+	<homepage>http://code.google.com/p/irrlamb/</homepage>
+	<version>
+		<name>0.1.1</name>
+		<publish_time>2013-03-19 15:32:44</publish_time>
+		<changes/>
+			<download>
+				<name>Installer</name>
+				<link>http://irrlamb.googlecode.com/files/irrlamb-0.1.1-setup.exe</link>
+			</download>
+	</version>
+</product>

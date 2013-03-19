@@ -23,10 +23,10 @@ def _enable_base_staticapp(app):
                 ,'tools.staticdir.dir': os.path.join(current_path
                 , '..', 'templates', dir)
                 }
-    conf['/media'] =  {\
+    conf['/thumbs'] =  {\
                 'tools.staticdir.on': True
                 ,'tools.staticdir.dir': os.path.join(current_path
-                , 'media')
+                , '..', 'public_html', 'thumbs')
                 }
     app.merge(conf)
         

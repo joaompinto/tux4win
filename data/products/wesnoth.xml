@@ -1,0 +1,22 @@
+<product>
+	<short_name>wesnoth</short_name>
+	<display_name>The Battle for Wesnoth</display_name>
+	<category>RPG</category>
+	<short_desc>fantasy turn-based strategy game - complete suite (branch 1.10)</short_desc>
+	<long_desc>
+	Battle for control of villages, using variety of units which have advantages 
+	and disadvantages in different types of terrains and against different types of attacks. 
+	Units gain experience and advance levels, and are carried over from one scenario to 
+	the next campaign. 
+	</long_desc>
+	<homepage>http://wesnoth.org/</homepage>
+	<version>
+		<name>1.10.5</name>
+		<publish_time>2013-03-19 16:32:44</publish_time>
+		<changes/>
+			<download>
+				<name>Installer</name>
+				<link>http://sourceforge.net/projects/wesnoth/files/wesnoth-1.10/wesnoth-1.10.5/wesnoth-1.10.5-win32.exe/download</link>
+			</download>
+	</version>
+</product>

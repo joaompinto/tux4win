@@ -16,8 +16,6 @@ __status__ = "Production"
 
 sys.stdout = sys.stderr
 
-
-    
 cherrypy.config.update({'environment': 'embedded'})
 cherrypy.config.update({'log.screen': True })
 

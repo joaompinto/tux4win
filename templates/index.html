@@ -16,14 +16,23 @@
 	</div>	
 	<div id="content">
 		{{for a in products_data}}
-			{{a['display_name'] | html}} {{a['version'][0]['name'] | html}}<br>
-			{{for b in a['version'][0]['download']}}
-				<A HREF="{{b['link']}}">{{b['name']}}</A>
-			{{endfor}}
-		{{endfor}}	
+		<div class="product">
+			<h2>{{a['display_name'] | html}} {{a['version'][0]['name'] | html}}</h2>		
+			<A class="thumb_link" href="#"><img src="/thumbs/{{a['short_name']}}.png" alt="" class="thumb"/></A>
+			<div class="details">
+				{{a['long_desc'] | html}}	
+				<br>
+				<h3 class="download_links">
+				{{for b in a['version'][0]['download']}}
+					<A HREF="{{b['link']}}" >Download {{b['name']}}</A>
+				{{endfor}}
+				</h3>
+			</div>
+		</div>
+		{{endfor}}
 	</div>
 	<div id="footer">
-		Copyright © Site name, 20XX
+		Copyright, Site name, 20XX
 	</div>
 </div>
 </body>
