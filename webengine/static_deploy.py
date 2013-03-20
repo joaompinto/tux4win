@@ -1,3 +1,15 @@
+#!/usr/bin/pyhon
+# -*- coding: utf-8 -*- 
+
+"""
+  This module provides functions to generate the static components of 
+  the site: (.html and screenshot thumbnails).
+  The data is obtained from the data/products/*.xml files and the html 
+  files are generated from templates/*.html, which are "Tempita" templates.
+  The screenshot thumbnails (public_html/thumbs) are generated 
+  from data/media/screenshots/*.png .
+"""
+
 import os
 import sys
 from PIL import Image

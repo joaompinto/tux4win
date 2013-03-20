@@ -2,6 +2,11 @@ import os
 import cherrypy
 from os.path import join
 from cherrypy.lib.static import serve_file
+
+"""
+  This module provides the WSGI application core which is build on top
+  of a CherryPy application.
+"""
   
 class Root(object):
     def __init__(self):
