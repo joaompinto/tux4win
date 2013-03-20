@@ -1,0 +1,22 @@
+<product>
+	<short_name>warsow</short_name>
+	<display_name>Warsow</display_name>
+	<category>FPS</category>
+	<short_desc>Fast paced 3D first person shooter</short_desc>
+	<long_desc>
+	Warsow is a fast paced first person shooter consisting of cel-shaded 
+	cartoon-like graphics with dark, flashy and dirty textures. 
+	Warsow is based on the E-novel "Chasseur de bots" ("Bots hunter" in English) 
+	by Fabrice Demurger.
+	</long_desc>
+	<homepage>http://www.warsow.net/</homepage>
+	<version>
+		<name>1.02</name>
+		<publish_time>2013-03-20 21:30:44</publish_time>
+		<changes/>
+			<download>
+				<name>Installer</name>
+				<link>http://www.zcdn.org/dl/1.02/warsow_1.02_setup.exe</link>
+			</download>
+	</version>
+</product>

@@ -5,14 +5,14 @@ Free and Open Source Games for Windows
 {{def content}}
 		{{for a in products_data}}
 		<div class="product">
-			<h2>{{a['display_name']}} {{a['version'][0]['name']}}</h2>		
+			<h2>{{a['display_name']}} {{a['version'][0]['name']}} - {{a['short_desc']}}</h2>			
 			<A class="thumb_link" href="#"><img src="/thumbs/{{a['short_name']}}.png" alt="" class="thumb"/></A>
 			<div class="details">
 				{{a['long_desc']}}	
 				<br>
 				<h3 class="download_links">
 				{{for b in a['version'][0]['download']}}
-					<A HREF="{{b['link'] | url}}" >Download {{b['name']}}</A>
+					<A HREF="{{b['link']}}" >Download {{b['name']}}</A>
 				{{endfor}}
 				</h3>
 			</div>
