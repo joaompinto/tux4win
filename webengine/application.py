@@ -14,7 +14,8 @@ class Root(object):
         self.public_html_path = join(current_path,'..', 'public_html') 
         
     def index(self):
-        return serve_file(join(self.public_html_path, 'index.html'))
+        return serve_file(join(self.public_html_path, 'index.html')
+                          , content_type='text/html')
     
     index.exposed = True
 
