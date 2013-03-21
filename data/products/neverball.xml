@@ -1,0 +1,23 @@
+<product>
+	<short_name>neverball</short_name>
+	<display_name>Neverball</display_name>
+	<category>Puzzle</category>
+	<short_desc></short_desc>
+	<long_desc>
+	In the grand tradition of Marble Madness and Super Monkey Ball, Neverball 
+	has you guide a rolling ball through dangerous territory. Balance on 
+	narrow bridges, navigate mazes, ride moving platforms, and dodge pushers 
+	and shovers to get to the goal. Race against the clock to collect coins 
+	to earn extra balls.
+	</long_desc>
+	<homepage>http://neverball.org/</homepage>
+	<version>
+		<name>1.5.4</name>
+		<publish_time>2013-03-09 15:32:44</publish_time>
+		<changes/>
+		<download>
+			<name>Installer</name>
+			<link>http://neverball.org/neverball-1.5.4-setup.exe</link>
+		</download>
+	</version>
+</product>
