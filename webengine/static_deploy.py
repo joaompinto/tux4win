@@ -4,8 +4,8 @@
 """
   This module provides functions to generate the static components of 
   the site: (.html and screenshot thumbnails).
-  The data is obtained from the data/products/*.xml files and the html 
-  files are generated from templates/*.html, which are "Tempita" templates.
+  The data is read from the data/products/*.xml files, the html files 
+  are generated from templates/*.html, which are "Tempita" templates.
   The screenshot thumbnails (public_html/thumbs) are generated 
   from data/media/screenshots/*.png .
 """
@@ -26,11 +26,17 @@ if path not in sys.path:
     sys.path.append(path)
 
 from tempita import HTMLTemplate
-    
+
+
 def dict_from_element(element):
+    """
+    Returns a dict from an XML structure: dict[element.tag] = element.text
+    When a child element contains childs elements, set it to a list 
+    of dics of the child elements
+    """
     element_dict = {}
     for child in element:
-        if list(child): # contains sub elements
+        if list(child): # contains childs elements
             child_dict = dict_from_element(child)
             if not child.tag in element_dict:
                 element_dict[child.tag] = [child_dict]
@@ -41,18 +47,24 @@ def dict_from_element(element):
     return element_dict
 
 def load_products_data():
+    """
+    Load products data from products/*.xml files 
+    Return a list of dicts containing the corresponding xml data
+    """
     data_path = join(current_path(), '..', 'data')
-    products = glob(join(data_path, 'products', '*.xml'))
-    print "Processing %d product file(s)" % len(products)
+    product_files = glob(join(data_path, 'products', '*.xml'))
     products_list = []
-    for product_xml in products:
-        tree = etree.parse(product_xml)
+    for product_file in product_files:
+        tree = etree.parse(product_file)
         product_dict = dict_from_element(tree.getroot())
         products_list.append(product_dict)
     return products_list
 
-def create_thumb(source_filename, target_filename):
-    size = 260, 205
+def create_thumb(source_fame, target_fame, target_w = 260, target_h=205):
+    """
+    Create a resized image from source_fname into target_fname
+    """
+    size = target_w, target_h
     im = Image.open(source_filename)
     width = im.size[0]
     height = im.size[1]
@@ -67,6 +79,10 @@ def create_thumb(source_filename, target_filename):
     im.save(target_filename)
             
 def update_thumbs():
+    """
+    Update thumbnails for images which don't have one or which have been 
+    modified after the corresponding thumbnail file. 
+    """
     screens_path = public_html_path = join(current_path(), 
                                            '..', 'data', 'media', 'screens')
     thumbs_path = join(current_path(), '..', 'public_html', 'thumbs')
@@ -89,7 +105,9 @@ def update_thumbs():
             
 
 def rebuild_static_files():
-    """ Rebuilds static htmtl files from the dynamics data """
+    """ 
+    Rebuilds static htmtl files from the dynamics data 
+    """
     public_html_path = join(current_path(), '..', 'public_html')
     if not exists(public_html_path):
         os.mkdir(public_html_path)

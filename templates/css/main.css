@@ -120,10 +120,19 @@
 
 .product .details .download_links {
     position: absolute;
-    bottom: 10px;
+    bottom: 30px;
     left: 280px;
     width: 468px;
     border-bottom: 2px solid rgb(119, 119, 119);
+    padding: 0px 0px 5px;
+    margin: 0px 0px 5px 5px;
+}
+
+.product .details .additional_info {
+    position: absolute;
+    bottom: 0px;
+    left: 280px;
+    width: 468px;
     padding: 0px 0px 5px;
     margin: 0px 0px 5px 5px;
 }

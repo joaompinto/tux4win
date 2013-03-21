@@ -3,18 +3,27 @@
 Free and Open Source Games for Windows
 {{enddef}}
 {{def content}}
-		{{for a in products_data}}
+		{{for product in products_data}}
 		<div class="product">
-			<h2>{{a['display_name']}} {{a['version'][0]['name']}} - {{a['short_desc']}}</h2>			
-			<A class="thumb_link" href="#"><img src="/thumbs/{{a['short_name']}}.png" alt="" class="thumb"/></A>
+			<h2>{{product['display_name']}} {{product['version'][0]['name']}} 
+			- {{product['short_desc']}}</h2>			
+			<A class="thumb_link" href="#">
+			<img src="/thumbs/{{product['short_name']}}.png" alt="" class="thumb"/></A>
 			<div class="details">
-				{{a['long_desc']}}	
+				{{product['long_desc']}}	
 				<br>
 				<h3 class="download_links">
-				{{for b in a['version'][0]['download']}}
-					<A HREF="{{b['link']}}" >Download {{b['name']}}</A>
+				{{for download in product['version'][0]['download']}}
+					<A HREF="{{download['link']}}" >Download {{download['name']}}</A>
 				{{endfor}}
 				</h3>
+				<div class="additional_info">
+					<A HREF="{{product['homepage']}}" 
+						class="homepage" target="_blank">Homepage</A>
+					{{if 'video' in product}}
+					<A HREF="{{product['video']}}" class="video">Video</A>
+					{{endif}}
+				</div>
 			</div>
 		</div>
 		{{endfor}}
