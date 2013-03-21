@@ -65,7 +65,7 @@ def create_thumb(source_fame, target_fame, target_w = 260, target_h=205):
     Create a resized image from source_fname into target_fname
     """
     size = target_w, target_h
-    im = Image.open(source_filename)
+    im = Image.open(source_fame)
     width = im.size[0]
     height = im.size[1]
     newwidth = int(size[0])
@@ -76,7 +76,7 @@ def create_thumb(source_fame, target_fame, target_w = 260, target_h=205):
     size = newwidth, newheight
     # Resize and save the image
     im.thumbnail(size, Image.ANTIALIAS)
-    im.save(target_filename)
+    im.save(target_fame)
             
 def update_thumbs():
     """
