@@ -10,20 +10,22 @@ Free and Open Source Games for Windows
 			<A class="thumb_link" href="#">
 			<img src="/thumbs/{{product['short_name']}}.png" alt="" class="thumb"/></A>
 			<div class="details">
-				{{product['long_desc']}}	
-				<br>
-				<h3 class="download_links">
-				{{for download in product['version'][0]['download']}}
-					<A HREF="{{download['link']}}" >Download {{download['name']}}</A>
-				{{endfor}}
-				</h3>
 				<div class="additional_info">
 					<A HREF="{{product['homepage']}}" 
 						class="homepage" target="_blank">Homepage</A>
 					{{if 'video' in product}}
 					<A HREF="{{product['video']}}" class="video">Video</A>
 					{{endif}}
-				</div>
+				</div>			
+				<div class="long_desc">
+				{{product['long_desc']}}
+				</div>	
+				<br>
+				<h3 class="download_links">
+				{{for download in product['version'][0]['download']}}
+					<A HREF="{{download['link']}}" >Download {{download['name']}}</A>
+				{{endfor}}
+				</h3>
 			</div>
 		</div>
 		{{endfor}}
