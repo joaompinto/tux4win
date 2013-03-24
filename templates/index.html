@@ -3,7 +3,7 @@
 Free and Open Source Games for Windows
 {{enddef}}
 {{def content}}
-		{{for product in products_data}}
+		{{for product in products}}
 		<div class="product">
 			<h2>{{product['display_name']}} {{product['version'][0]['name']}} 
 			- {{product['short_desc']}}</h2>			
@@ -29,4 +29,14 @@ Free and Open Source Games for Windows
 			</div>
 		</div>
 		{{endfor}}
+		{{if prev_page_nr}}
+		<div class="paging" style="text-align:left;">
+		<A HREF="?page={{prev_page_nr}}">Previous Page</A>
+		</div> 
+		{{endif}}
+		{{if next_page_nr}}
+		<div class="paging" style="text-align: right";>
+		<A HREF="?page={{next_page_nr}}">Next Page</A>
+		</div> 
+		{{endif}}
 {{enddef}}

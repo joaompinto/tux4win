@@ -13,8 +13,10 @@ class Root(object):
         current_path = os.path.dirname(os.path.abspath(__file__))
         self.public_html_path = join(current_path,'..', 'public_html') 
         
-    def index(self):
-        return serve_file(join(self.public_html_path, 'index.html'))
+    def index(self, page=1):
+        page_nr = int(page)
+        fname = join(self.public_html_path, 'index.html.%d' % page_nr)
+        return serve_file(fname)
     
     index.exposed = True
 

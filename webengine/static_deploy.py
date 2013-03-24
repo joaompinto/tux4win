@@ -106,17 +106,29 @@ def update_thumbs():
 
 def rebuild_static_files():
     """ 
-    Rebuilds static htmtl files from the dynamics data 
+    Rebuilds static files
     """
     public_html_path = join(current_path(), '..', 'public_html')
     if not exists(public_html_path):
         os.mkdir(public_html_path)
+    
+    # Create index.html
     template = HTMLTemplate.from_filename(join(current_path(), '..',
                                                'templates' , 'index.html'))
     products_data = load_products_data()
-    with open(join(public_html_path, 'index.html'), 'w') as index_html_file:
-        index_html_file.write(template.substitute(locals()) )
-        
+    all_products = sorted(products_data, 
+           key=lambda product: product['version'][0]['publish_time'])
+  
+    for i in xrange(0, len(all_products), 5):
+        products = all_products[i:i+5]
+        page_nr = (i/5)+1
+        next_page_nr = page_nr + 1 if len(all_products) > i+5 else 0
+        prev_page_nr = page_nr - 1 if page_nr > 1 else 0
+        index_fname = join(public_html_path, 'index.html.%d' % page_nr)
+        with open(index_fname, 'w') as index_html_file:
+            index_html_file.write(template.substitute(locals()) )
+    
+    # Create/update screenshot thumbnails
     update_thumbs() 
         
 
