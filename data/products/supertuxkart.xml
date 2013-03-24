@@ -1,0 +1,24 @@
+<product>
+	<short_name>supertuxkart</short_name>
+	<display_name>SuperTuxKart</display_name>
+	<category>Races</category>
+	<short_desc>3D kart racing</short_desc>
+	<long_desc>
+	You can play with up to 4 friends on one PC, racing against each other or 
+	just try to beat the computer. See the great lighthouse or drive through 
+	the sand and visit the pyramids. Race underground or in space, watching
+	the stars passing by. Have some rest under the palms on the beach. 
+	But don't eat the bananas! Watch for bowling balls, plungers, bubble gum
+	and cakes thrown by opponents.
+	</long_desc>
+	<homepage>http://supertuxkart.sourceforge.net/</homepage>
+	<version>
+		<name>0.8</name>
+		<publish_time>2013-03-07 15:32:44</publish_time>
+		<changes/>
+			<download>
+				<name>Installer</name>
+				<link>http://sourceforge.net/projects/supertuxkart/files/SuperTuxKart/0.8/supertuxkart-0.8-win.exe/download</link>
+			</download>
+	</version>
+</product>
