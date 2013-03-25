@@ -36,7 +36,11 @@ def _enable_base_staticapp(app):
                 , '..', 'public_html', 'thumbs')
                 }
     app.merge(conf)
+
+def _base_config():
+    cherrypy.config.update({'tools.encode.on': True, 
+                            'tools.encode.encoding': 'utf-8'})
         
 application = cherrypy.Application(Root(), script_name=None, config=None)
+_base_config()
 _enable_base_staticapp(application)
-
