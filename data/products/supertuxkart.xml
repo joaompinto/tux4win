@@ -1,5 +1,5 @@
 <product>
-	<short_name>supertuxkart</short_name>
+	<index_name>supertuxkart</index_name>
 	<display_name>SuperTuxKart</display_name>
 	<category>Races</category>
 	<short_desc>3D kart racing</short_desc>

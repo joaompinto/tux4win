@@ -1,5 +1,5 @@
 <product>
-	<short_name>bitfigther</short_name>
+	<index_name>bitfigther</index_name>
 	<display_name>Bitfigther</display_name>
 	<category>Action</category>
 	<short_desc>Multiplayer vector graphics space game</short_desc>

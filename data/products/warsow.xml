@@ -1,5 +1,5 @@
 <product>
-	<short_name>warsow</short_name>
+	<index_name>warsow</index_name>
 	<display_name>Warsow</display_name>
 	<category>FPS</category>
 	<short_desc>Fast paced 3D first person shooter</short_desc>
