@@ -1,7 +1,10 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/css/main.css">
-<title>{{title | html}}</title>
+<title>{{self.title | html}}</title>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.colorbox-min.js"></script>
+{{self.get.head_extra | html}}
 </head>
 <body>
 <div id="container">
@@ -16,7 +19,7 @@
 		</ul>
 	</div>	
 	<div id="content">
-{{content | html}}
+{{self.content | html}}
 	</div>
 	<div id="footer">
 		© João Pinto, 2013

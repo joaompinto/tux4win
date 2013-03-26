@@ -2,12 +2,19 @@
 {{def title}}
 Free and Open Source Games for Windows
 {{enddef}}
+{{def head_extra}}
+        <script>
+            jQuery(document).ready(function () {
+                jQuery('a.thumb_link').colorbox();
+            });
+        </script>
+{{enddef}}
 {{def content}}
 		{{for product in products}}
 		<div class="product">
 			<h2>{{product['display_name']}} {{product['version'][0]['name']}} 
 			- {{product['short_desc']}}</h2>			
-			<A class="thumb_link" href="#">
+			<A class="thumb_link" href="/media/screens/{{product['short_name']}}.png">
 			<img src="/thumbs/{{product['short_name']}}.png" alt="" class="thumb"/></A>
 			<div class="details">
 				<div class="additional_info">

@@ -35,6 +35,11 @@ def _enable_base_staticapp(app):
                 ,'tools.staticdir.dir': os.path.join(current_path
                 , '..', 'public_html', 'thumbs')
                 }
+    conf['/media'] =  {\
+                'tools.staticdir.on': True
+                ,'tools.staticdir.dir': os.path.join(current_path
+                , '..', 'data', 'media')
+                }    
     app.merge(conf)
 
 def _base_config():
