@@ -12,6 +12,7 @@
 
 import os
 import sys
+import re
 from PIL import Image
 from lxml import etree
 from os.path import dirname, join, exists, basename
@@ -54,9 +55,12 @@ def load_products_data():
     data_path = join(current_path(), '..', 'data')
     product_files = glob(join(data_path, 'products', '*.xml'))
     products_list = []
-    for product_file in product_files:
-        tree = etree.parse(product_file)
+    for product_filename in product_files:
+        tree = etree.parse(product_filename)
         product_dict = dict_from_element(tree.getroot())
+        if not re.match('^[a-z.]+$', product_dict['index_name']):
+            raise Exception('Invalid index name %s at %s, must match [a-z.]+' % 
+                    (product_dict['index_name'] , basename(product_filename)))
         products_list.append(product_dict)
     return products_list
 
@@ -119,6 +123,12 @@ def rebuild_static_files():
     all_products = sorted(products_data, 
            key=lambda product: product['version'][0]['publish_time'])
   
+    # Build index html files
+    # First remove any existing files
+    html_files_list = glob(join(public_html_path, 'index.html.*'))
+    for html_filename in html_files_list:
+        os.unlink(html_filename)
+    # Create per page files
     for i in xrange(0, len(all_products), 5):
         products = all_products[i:i+5]
         page_nr = (i/5)+1
@@ -126,8 +136,25 @@ def rebuild_static_files():
         prev_page_nr = page_nr - 1 if page_nr > 1 else 0
         index_fname = join(public_html_path, 'index.html.%d' % page_nr)
         with open(index_fname, 'w') as index_html_file:
-            index_html_file.write(template.substitute(locals()) )
+            index_html_file.write(template.substitute(locals()))
     
+    # Build per product files
+    template = HTMLTemplate.from_filename(join(current_path(), '..',
+                                               'templates' , 'product.html'))
+        
+    products_path = join(public_html_path, 'products')
+    if not exists(products_path):
+        os.mkdir(products_path)
+    html_files_list = glob(join(products_path, '*.html'))
+    # First remove any existing files
+    for html_filename in html_files_list:
+        os.unlink(html_filename)
+    for product in all_products:
+        index_name = basename(product['index_name'])
+        product_fname = join(products_path, '%s.html' % index_name)
+        with open(product_fname, 'w') as html_file:
+           html_file.write(template.substitute(locals())) 
+             
     # Create/update screenshot thumbnails
     update_thumbs() 
         

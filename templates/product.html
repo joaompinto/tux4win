@@ -1,0 +1,38 @@
+{{inherit "common.html"}}
+{{def title}}
+Free and Open Source Games for Windows
+{{enddef}}
+{{def head_extra}}
+        <script>
+            jQuery(document).ready(function () {
+                jQuery('a.thumb_link').colorbox();
+            });
+        </script>
+{{enddef}}
+{{def content}}
+		<div class="product">
+			<h2>{{product['display_name']}}
+			 {{product['version'][0]['name']}} 
+			- {{product['short_desc']}}</h2>			
+			<A class="thumb_link" href="/media/screens/{{product['index_name']}}.png">
+			<img src="/thumbs/{{product['index_name']}}.png" alt="" class="thumb"/></A>
+			<div class="details">
+				<div class="additional_info">
+					<A HREF="{{product['homepage']}}" 
+						class="homepage" target="_blank" title="Visit homepage"></A>
+					{{if 'video' in product}}
+					<A HREF="{{product['video']}}" class="video" title="Watch demonstration video"></A>
+					{{endif}}
+				</div>			
+				<div class="long_desc">
+				{{product['long_desc']}}
+				</div>	
+				<br>
+				<h3 class="download_links">
+				{{for download in product['version'][0]['download']}}
+					<A HREF="{{download['link']}}" >Download {{download['name']}}</A>
+				{{endfor}}
+				</h3>
+			</div>
+		</div>
+{{enddef}}

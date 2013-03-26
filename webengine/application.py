@@ -1,6 +1,8 @@
 import os
+import re
 import cherrypy
-from os.path import join
+from cherrypy import HTTPError
+from os.path import join, basename
 from cherrypy.lib.static import serve_file
 
 """
@@ -12,13 +14,25 @@ class Root(object):
     def __init__(self):
         current_path = os.path.dirname(os.path.abspath(__file__))
         self.public_html_path = join(current_path,'..', 'public_html') 
-        
+    
+    @cherrypy.expose
     def index(self, page=1):
         page_nr = int(page)
         fname = join(self.public_html_path, 'index.html.%d' % page_nr)
         return serve_file(fname)
+
+    @cherrypy.expose
+    def game(self, *args):
+        if len(args) < 1:
+            raise cherrypy.HTTPError(404)
+        game_name = basename(args[0])
+        print game_name
+        if not re.match('^[a-z.]+$', game_name):
+            raise cherrypy.HTTPError(404)
+        fname = join(self.public_html_path, 'products', '%s.html' % game_name)
+        return serve_file(fname)
     
-    index.exposed = True
+    
 
 def _enable_base_staticapp(app):
     current_path = os.path.dirname(os.path.abspath(__file__))    
