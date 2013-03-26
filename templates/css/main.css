@@ -131,3 +131,10 @@
 	height: 1%;
 }
 
+.warning {	
+	font-weight:bold;
+	width:767px;
+	margin: auto;	
+	background-color:#FFFF99;
+}
+
