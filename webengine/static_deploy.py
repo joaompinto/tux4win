@@ -122,7 +122,8 @@ def rebuild_static_files():
     products_data = load_products_data()
     all_products = sorted(products_data, 
            key=lambda product: product['version'][0]['publish_time'])
-  
+    all_products.reverse()
+      
     # Build index html files
     # First remove any existing files
     html_files_list = glob(join(public_html_path, 'index.html.*'))

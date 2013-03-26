@@ -1,0 +1,25 @@
+<product>
+	<index_name>pingus</index_name>
+	<display_name>Pingus</display_name>
+	<category>Puzzle</category>
+	<short_desc>Lemmingstm™-like puzzle game</short_desc>
+	<long_desc>
+	The player takes command in the game of a bunch of small animals and has
+	to guide them through levels. Since the animals walk on their own, the 
+	player can only influence them by giving them commands, like build a
+	bridge, dig a hole or redirect all animals in the other direction.
+	The goal of each level is to reach the exit, for this multiple combination
+	of commands are necessary.
+	</long_desc>
+	<homepage>http://pingus.seul.org/</homepage>
+	<video>http://www.youtube.com/watch?v=NPTWg3g-1lM</video>
+	<version>
+		<name>0.7.6</name>
+		<publish_time>2013-03-26 15:32:44</publish_time>
+		<changes/>
+			<download>
+				<name>Installer</name>
+				<link>http://pingus.googlecode.com/files/Pingus-0.7.6.exe</link>
+			</download>		
+	</version>
+</product>
