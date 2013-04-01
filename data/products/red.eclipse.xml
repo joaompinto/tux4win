@@ -1,0 +1,34 @@
+<product>
+	<index_name>red.eclipse</index_name>
+	<display_name>Red Eclipse</display_name>
+	<category>FPS</category>
+	<short_desc>a Free, Casual Arena Shooter</short_desc>
+	<long_desc>
+	Red Eclipse is a fun-filled new take on the casual first person arena 
+	shooter, built as a total conversion of Cube Engine 2, which lends itself 
+	toward a balanced gameplay, with a general theme of agility in a 
+	variety of environments.
+	</long_desc>
+	<homepage>http://www.redeclipse.net/</homepage>
+	<video>http://www.youtube.com/watch?v=mjHVb3z72tM</video>
+	<version>
+		<name>1.4</name>
+		<publish_time>2013-03-22 22:30:44</publish_time>
+		<changes>
+			Vanity items and improved colours: dress up and frag with style.
+			Visible legs in first person: know where you are kicking and parkouring.
+			New and revamped maps: bringing you even more variety.
+			Better viewing: level flythroughs, improved third and first person cameras.
+			Better menus and other HUD elements: easier to see and read at a glance.
+			New weapon: Mines add a new dimension to the existing gameplay.
+			New mode: attack and defend in Gauntlet, competing for the most laps.
+			Automatic demo recording: for those times you just have to watch it again.
+			User Accounts: donate or contribute, and wear the in-game supporter badge.
+			Improved weapon balance and gameplay rules, bugs fixed, and much more.
+		</changes>
+		<download>
+			<name>Installer</name>
+			<link>http://sourceforge.net/projects/redeclipse/files/redeclipse_1.4/redeclipse_1.4_win.exe/download</link>
+		</download>
+	</version>
+</product>
