@@ -19,11 +19,12 @@ Free and Open Source Games for Windows
 			<img src="/thumbs/{{product['index_name']}}.png" alt="" class="thumb"/></A>
 			<div class="details">
 				<div class="additional_info">
+					<g:plusone size="small" HREF="/game/{{product['index_name']}}"></g:plusone>
 					<A HREF="{{product['homepage']}}" 
 						class="homepage" target="_blank" title="Visit homepage"></A>
 					{{if 'video' in product}}
 					<A HREF="{{product['video']}}" class="video" title="Watch demonstration video"></A>
-					{{endif}}
+					{{endif}}										
 				</div>			
 				<div class="long_desc">
 				{{product['long_desc']}}
@@ -47,4 +48,11 @@ Free and Open Source Games for Windows
 		<A HREF="?page={{next_page_nr}}">Next Page</A>
 		</div> 
 		{{endif}}
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>		
 {{enddef}}
