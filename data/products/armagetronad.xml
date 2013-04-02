@@ -1,0 +1,22 @@
+<product>
+	<index_name>armagetronad</index_name>
+	<display_name>Armagetron Advanced</display_name>
+	<category>Racing</category>
+	<short_desc>Tron's lightcycle</short_desc>
+	<long_desc>
+	Armagetron is a multiplayer game in 3d that attempts to emulate and expand
+	on the lightcycle sequence from the movie Tron. It's an old school arcade
+	game slung into the 21st century. Highlights include a customizable 
+	playing arena, HUD, unique graphics, and AI bots.
+	</long_desc>
+	<homepage>http://armagetronad.org/</homepage>
+	<video>http://www.youtube.com/watch?v=exSHXcyxQ18</video>
+	<version>
+		<name>0.2.8.3.2</name>
+		<publish_time>2012-03-21 22:30:44</publish_time>
+		<download>
+			<name>Installer</name>
+			<link>http://sourceforge.net/projects/armagetronad/files/stable/0.2.8.3.2/armagetronad-0.2.8.3.2.win32.exe/download</link>
+		</download>
+	</version>
+</product>

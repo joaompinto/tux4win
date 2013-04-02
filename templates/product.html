@@ -1,6 +1,6 @@
 {{inherit "common.html"}}
 {{def title}}
-Game: {{product['display_name']}}
+{{product['display_name']}} {{product['version'][0]['name']}}
 {{enddef}}
 {{def head_extra}}
 		<meta name="description" content="{{product['long_desc']}}" />
