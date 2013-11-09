@@ -1,0 +1,23 @@
+<product>
+	<index_name>jvgs</index_name>
+	<display_name>jvgs</display_name>
+	<category>Puzzle</category>
+	<short_desc>a minimalistic platform game</short_desc>
+	<long_desc>
+        JVGS is an open source platform game that is not like the others.
+        It is build on simple line structures loaded from svg files, giving
+        the whole game a "sketched" and minimalistic look.
+        Levels can be made with simple xml and lua files.
+	</long_desc>
+	<homepage>http://jvgs.sourceforge.net/</homepage>
+	<video>http://www.youtube.com?v=UauZgrnKp0c</video>
+	<version>
+		<name>0.5</name>
+		<publish_time>2013-11-09 22:20:44</publish_time>
+		<changes/>
+			<download>
+				<name>Zip</name>
+				<link>http://sourceforge.net/projects/jvgs/files/jvgs-0.5/jvgs-0.5-win32.zip/download</link>
+			</download>
+	</version>
+</product>
