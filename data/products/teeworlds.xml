@@ -55,7 +55,7 @@ Client crash on removing friends
 Player spam votes, chat msgs etc. without entering the game
 Better chat msg spam protection
 Server crash in tdm
-                </change>
+                </changes>
 			<download>
 				<name>Zip</name>
 				<link>http://www.teeworlds.com/files/teeworlds-0.6.2-win32.zip</link>
