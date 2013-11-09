@@ -1,0 +1,64 @@
+<product>
+	<index_name>teeworlds</index_name>
+	<display_name>TeeWorlds</display_name>
+	<category>Action</category>
+	<short_desc>A retro multiplayer shooter</short_desc>
+	<long_desc>
+        Multiplayer game, battle with up to 16 players in a variety of game modes,
+        including Team Deathmatch and Capture The Flag. You can even design your own maps!
+	</long_desc>
+	<homepage>https://www.teeworlds.com/</homepage>
+	<video>http://www.youtube.com/watch?v=RFcCIqio7fQ</video>
+	<version>
+		<name>0.6.2</name>
+		<publish_time>2013-11-09 21:40</publish_time>
+		<changes>
+Features:
+Added envelope options (synchronized, starting when player joins)
+Improved ban system (range bans, save them)
+Added logout command
+Added swap/shuffle/(un)lock team commands
+Added threaded rendering
+Switched client and highlight chat sound
+Store tunings within demos
+Added a command to toggle config values
+Show only chat messages from friends
+Added pause game command
+Added demo markers
+Improved editor (f.e. envelope preview, map info)
+Auto adjust resolution on first start
+Added borderless window functionality
+Show user authlevel on status command
+Adjust cpu usage via cl_cpu_throttle
+Bugfixes:
+Loud noise on endround
+Couple of editor fixes (f.e. large memory leaks)
+Building with minGW
+Win64 building
+x86_64 bulding on mac
+Clang support
+Server browser (f.e. better/faster sorting, missing entries on windows)
+Memory corruption on snd_buffer_size command
+Playing multiple chat sounds result in loud noise
+Possible econ buffer overflow
+Initialisation of big maps
+Exploit that let you see the health/ammo of an opponent
+Show active vote when joining a server
+Spam via player leave message
+Count spectators in the server browser
+Limit characters within player names to ascii range to prevent utf8 impersonating
+Create loud noise via no ammo sound
+Prevent downloading a map on a password protected server without entering it
+Join/quit server flooding
+Popups lead to frozen GUI
+Client crash on removing friends
+Player spam votes, chat msgs etc. without entering the game
+Better chat msg spam protection
+Server crash in tdm
+                </change>
+			<download>
+				<name>Zip</name>
+				<link>http://www.teeworlds.com/files/teeworlds-0.6.2-win32.zip</link>
+			</download>
+	</version>
+</product>
