@@ -1,0 +1,22 @@
+<product>
+	<index_name>openclonk</index_name>
+	<display_name>Pingus</display_name>
+	<category>OpenClonk</category>
+	<short_desc>Beyond the Rocks</short_desc>
+	<long_desc>
+        multiplayer action game in which you control clonks, small but witty and
+        nimble humanoid beings.
+        The game is mainly about mining, settling and fast-paced melees.
+	</long_desc>
+	<homepage>http://www.openclonk.org/</homepage>
+	<video>https://www.youtube.com/watch?v=ykJZ9WsevGE</video>
+	<version>
+		<name>5.3.3</name>
+		<publish_time>2013-11-09 21:24</publish_time>
+		<changes/>
+			<download>
+				<name>Installer</name>
+				<link>http://www.openclonk.org/builds/release/5.3.3/openclonk-5.3.3.exe</link>
+			</download>
+	</version>
+</product>
