@@ -1,0 +1,22 @@
+<product>
+	<index_name>i.have.no.tomatoes</index_name>
+	<display_name>I Have No Tomatoes</display_name>
+	<category>Puzzle</category>
+	<short_desc>Explode other tomatoes</short_desc>
+	<long_desc>
+        I Have No Tomatoes is an extreme leisure time activity idea of which culminates
+        in the following question: How many tomatoes can you smash in ten short minutes?
+        If you have the time to spare, this game has the vegetables just waiting to be eliminated!
+        </long_desc>
+	<homepage>http://tomatoes.sourceforge.net/</homepage>
+	<video/>
+	<version>
+		<name>1.5</name>
+		<publish_time>2013-11-09 23:45:00</publish_time>
+		<changes/>
+			<download>
+				<name>Installer</name>
+				<link>http://prdownloads.sourceforge.net/tomatoes/tomatoes-win32-1.5.exe?download</link>
+			</download>
+	</version>
+</product>
