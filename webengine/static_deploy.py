@@ -1,12 +1,12 @@
 #!/usr/bin/pyhon
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 """
-  This module provides functions to generate the static components of 
+  This module provides functions to generate the static components of
   the site: (.html and screenshot thumbnails).
-  The data is read from the data/products/*.xml files, the html files 
+  The data is read from the data/products/*.xml files, the html files
   are generated from templates/*.html, which are "Tempita" templates.
-  The screenshot thumbnails (public_html/thumbs) are generated 
+  The screenshot thumbnails (public_html/thumbs) are generated
   from data/media/screenshots/*.png .
 """
 
@@ -32,7 +32,7 @@ from tempita import HTMLTemplate
 def dict_from_element(element):
     """
     Returns a dict from an XML structure: dict[element.tag] = element.text
-    When a child element contains childs elements, set it to a list 
+    When a child element contains childs elements, set it to a list
     of dics of the child elements
     """
     element_dict = {}
@@ -49,7 +49,7 @@ def dict_from_element(element):
 
 def load_products_data():
     """
-    Load products data from products/*.xml files 
+    Load products data from products/*.xml files
     Return a list of dicts containing the corresponding xml data
     """
     data_path = join(current_path(), '..', 'data')
@@ -58,8 +58,8 @@ def load_products_data():
     for product_filename in product_files:
         tree = etree.parse(product_filename)
         product_dict = dict_from_element(tree.getroot())
-        if not re.match('^[a-z.]+$', product_dict['index_name']):
-            raise Exception('Invalid index name %s at %s, must match [a-z.]+' % 
+        if not re.match('^[0-9a-z.]+$', product_dict['index_name']):
+            raise Exception('Invalid index name %s at %s, must match [a-z.]+' %
                     (product_dict['index_name'] , basename(product_filename)))
         products_list.append(product_dict)
     return products_list
@@ -81,13 +81,13 @@ def create_thumb(source_fame, target_fame, target_w = 260, target_h=205):
     # Resize and save the image
     im.thumbnail(size, Image.ANTIALIAS)
     im.save(target_fame)
-            
+
 def update_thumbs():
     """
-    Update thumbnails for images which don't have one or which have been 
-    modified after the corresponding thumbnail file. 
+    Update thumbnails for images which don't have one or which have been
+    modified after the corresponding thumbnail file.
     """
-    screens_path = public_html_path = join(current_path(), 
+    screens_path = public_html_path = join(current_path(),
                                            '..', 'data', 'media', 'screens')
     thumbs_path = join(current_path(), '..', 'public_html', 'thumbs')
     if not exists(thumbs_path):
@@ -106,24 +106,24 @@ def update_thumbs():
             except OSError:
                 pass
             create_thumb(screen_filename, thumb_filename)
-            
+
 
 def rebuild_static_files():
-    """ 
+    """
     Rebuilds static files
     """
     public_html_path = join(current_path(), '..', 'public_html')
     if not exists(public_html_path):
         os.mkdir(public_html_path)
-    
+
     # Create index.html
     template = HTMLTemplate.from_filename(join(current_path(), '..',
                                                'templates' , 'index.html'))
     products_data = load_products_data()
-    all_products = sorted(products_data, 
+    all_products = sorted(products_data,
            key=lambda product: product['version'][0]['publish_time'])
     all_products.reverse()
-      
+
     # Build index html files
     # First remove any existing files
     html_files_list = glob(join(public_html_path, 'index.html.*'))
@@ -138,11 +138,11 @@ def rebuild_static_files():
         index_fname = join(public_html_path, 'index.html.%d' % page_nr)
         with open(index_fname, 'w') as index_html_file:
             index_html_file.write(template.substitute(locals()))
-    
+
     # Build per product files
     template = HTMLTemplate.from_filename(join(current_path(), '..',
                                                'templates' , 'product.html'))
-        
+
     products_path = join(public_html_path, 'products')
     if not exists(products_path):
         os.mkdir(products_path)
@@ -154,11 +154,11 @@ def rebuild_static_files():
         index_name = basename(product['index_name'])
         product_fname = join(products_path, '%s.html' % index_name)
         with open(product_fname, 'w') as html_file:
-           html_file.write(template.substitute(locals())) 
-             
+           html_file.write(template.substitute(locals()))
+
     # Create/update screenshot thumbnails
-    update_thumbs() 
-        
+    update_thumbs()
+
 
 if __name__ == "__main__":
     rebuild_static_files()
