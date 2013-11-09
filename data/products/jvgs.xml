@@ -10,7 +10,7 @@
         Levels can be made with simple xml and lua files.
 	</long_desc>
 	<homepage>http://jvgs.sourceforge.net/</homepage>
-	<video>http://www.youtube.com?v=UauZgrnKp0c</video>
+	<video>https://youtube.googleapis.com/v/UauZgrnKp0c?autoplay=1</video>
 	<version>
 		<name>0.5</name>
 		<publish_time>2013-11-09 22:20:44</publish_time>

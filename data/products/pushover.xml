@@ -1,0 +1,22 @@
+<product>
+	<index_name>pushover</index_name>
+	<display_name>Pushover</display_name>
+	<category>Puzzle</category>
+	<short_desc>Domino puzzle game</short_desc>
+	<long_desc>
+        All dominos must fall and none must crash into another.
+        One special domino must fall as last domino and that domino triggers the
+        exit door to open when you enter the exit door the level has been completed.
+	</long_desc>
+	<homepage>http://pushover.sourceforge.net/</homepage>
+	<video/>
+	<version>
+		<name>0.0.5</name>
+		<publish_time>2013-11-09 22:45:00</publish_time>
+		<changes/>
+			<download>
+				<name>Zip</name>
+				<link>http://prdownloads.sourceforge.net/pushover/pushover-0.0.5-win32.zip?download</link>
+			</download>
+	</version>
+</product>
